@@ -44,5 +44,17 @@
     <ClCompile Include="Exit.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="UI.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Create.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Reallocation.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Find.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
