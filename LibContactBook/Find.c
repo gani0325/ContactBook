@@ -29,7 +29,7 @@ char* Find(USERDATA* Head, char* name)
 				printf("중복된 이름입니다. 다시 입력해주세요!\n");
 				Find(Current, name);
 			}
-			if (Current->pNext != NULL) {
+			if (Current->pNext == NULL) {
 				break;
 			}
 			Current = Current->pNext;
