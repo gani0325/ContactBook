@@ -15,9 +15,7 @@ USERDATA* Create(USERDATA** Head) {
 	char phone[32];
 	int num = 0;
 
-	printf("%p\n", name);
 	Find(*Head, name);
-	printf("%p", name);
 
 	printf("이름에 맞는 전화번호를 입력하세요(010-0000-0000):");
 	scanf("%s", phone);

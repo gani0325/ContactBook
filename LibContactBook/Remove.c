@@ -29,27 +29,32 @@ USERDATA* SLL_GetNodeAt(USERDATA* Head)
 	return Current;
 }
 
+//  노드 소멸 
+void SLL_DestroyNode(USERDATA* Remove)
+{
+	free(Remove);
+}
+
 void Remove(USERDATA** Head, USERDATA* Remove) {
 
 	//  노드 제거 
+	if (*Head == Remove)
 	{
-		if (*Head == Remove)
-		{
-			*Head = Remove->pNext;
-		}
-		else
-		{
-			USERDATA* Current = *Head;
-			while (Current != NULL)
-			{
-				if (Current->pNext == Remove) {
-					break;
-				}
-				Current = Current->pNext;
-			}
-
-			if (Current != NULL)
-				Current->pNext = Remove->pNext;
-		}
+		*Head = Remove->pNext;
 	}
+	else
+	{
+		USERDATA* Current = *Head;
+		while (Current != NULL)
+		{
+			if (Current->pNext == Remove) {
+				break;
+			}
+			Current = Current->pNext;
+		}
+
+		if (Current != NULL)
+			Current->pNext = Remove->pNext;
+	}
+	SLL_DestroyNode(Remove);
 }

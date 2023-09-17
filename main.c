@@ -44,10 +44,12 @@ void main() {
 		else if (temp == 'U') {
 			Update(Head);
 		}
+		else if (temp == 'E') {
+			Exit(Head);
+		}
 		else {
 			temp = "";
 			continue;
 		}
-		//temp = "";
 	}
 }

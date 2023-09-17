@@ -23,11 +23,14 @@ char* Find(USERDATA* Head, char* name)
 		scanf("%s", &NameTemp);
 		strcpy(FindTemp, Current->szName);
 
-		while (Current->pNext != NULL)
+		while (1)
 		{
 			if (*FindTemp == *NameTemp) {
 				printf("중복된 이름입니다. 다시 입력해주세요!\n");
 				Find(Current, name);
+			}
+			if (Current->pNext != NULL) {
+				break;
 			}
 			Current = Current->pNext;
 		}
