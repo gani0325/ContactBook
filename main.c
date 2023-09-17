@@ -44,7 +44,7 @@ void main() {
 		else if (temp == 'U') {
 			Update(Head);
 		}
-		else if (temp == 'E') {
+		else if (temp == 'X') {
 			Exit(Head);
 		}
 		else {
