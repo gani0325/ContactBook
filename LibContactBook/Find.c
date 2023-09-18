@@ -19,8 +19,7 @@ char* Find(USERDATA* Head, char* name)
 		return name;
 	}
 	else {
-		char FindTemp[15];
-		char NameTemp[15];
+
 
 		printf("추가할 이름을 입력하세요:");
 		scanf("%s", &NameTemp);
@@ -30,10 +29,14 @@ char* Find(USERDATA* Head, char* name)
 		{
 			if (*FindTemp == *NameTemp) {
 				printf("중복된 이름입니다. 다시 입력해주세요!\n");
-				//Current = Head;
-				Find(Head, name);
-				//strcpy(name, NameTemp);
-				return name;
+				////Current = Head;
+				printf("추가할 이름을 입력하세요:");
+				scanf("%s", &NameTemp);
+				strcpy(FindTemp, Current->szName);
+				////strcpy(name, NameTemp);
+				//return name;
+				Current = Head;
+				continue;
 			}
 			if (Current->pNext == NULL) {
 				break;
@@ -42,7 +45,7 @@ char* Find(USERDATA* Head, char* name)
 		}
 
 		strcpy(name, NameTemp);
-		return NameTemp;
+		return name;
 	}
 
 }
