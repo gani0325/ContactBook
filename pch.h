@@ -33,7 +33,7 @@ USERDATA* Add(USERDATA** Head, USERDATA* NewNode);
 void Search(USERDATA* Head);
 
 // 3) 전화번호부 전체 출력
-USERDATA* PrintAll(USERDATA* Head);
+void PrintAll(USERDATA* Head);
 
 // 4) 전화번호부 삭제
 // - 삭제할 이름의 주소 확인
@@ -52,6 +52,5 @@ void Category(USERDATA* Head);
 // 7) 전화번호부 처음 시작시 주소 재할당
 USERDATA* Create_Pointer();
 void Reallocation(USERDATA** Head);
-
 // 8) 전화번호부 종료시 동적할당 해지
 void Exit(USERDATA* Head);

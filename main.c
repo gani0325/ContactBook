@@ -12,6 +12,7 @@ void main() {
 
 	USERDATA* Head = malloc(sizeof(USERDATA)+1);
 	memset(Head, 0, sizeof(USERDATA) + 1);
+	Head = NULL;
 	USERDATA* NewNode = NULL;
 	Reallocation(&Head);
   

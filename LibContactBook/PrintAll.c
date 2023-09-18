@@ -4,7 +4,7 @@
 #include <malloc.h>
 #include <locale.h>
 
-USERDATA* PrintAll(USERDATA* Head)
+void PrintAll(USERDATA* Head)
 {
 
 	USERDATA* Current = Head;
@@ -19,6 +19,4 @@ USERDATA* PrintAll(USERDATA* Head)
 
 		Current = Current->pNext;
 	}
-
-	return Current;
 }
