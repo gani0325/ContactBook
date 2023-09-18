@@ -37,8 +37,8 @@ USERDATA* Add(USERDATA** Head, USERDATA* NewNode) {
     //fprintf(pfile, "[%p] ", NewNode);
     fprintf(pfile, "이름: %s ", NewNode->szName);
     fprintf(pfile, "전화번호: %s ", NewNode->szPhone);
-    fprintf(pfile, "카테고리: %d ", NewNode->category);
-    fprintf(pfile, "이후 구조체 포인터 : %p\n", Temp);
+    fprintf(pfile, "카테고리: %d \n", NewNode->category);
+    //fprintf(pfile, "이후 구조체 포인터 : %p\n", Temp);
     //fprintf(pfile, "갖고있어야할 이전 구조체 포인터 : %p\n", NewNode->pNext);
     //fprintf(pfile, "현재 구조체 포인터(null 이어야함..) : %p", ContactBook->pNext);
     fclose(pfile);
