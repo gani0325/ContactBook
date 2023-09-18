@@ -9,6 +9,7 @@ typedef struct USERDATA
 	struct USERDATA* pNext;
 } USERDATA;
 
+
 // 큰 메뉴 UI
 void MainMenu(char* menu);
 
@@ -49,6 +50,7 @@ void Update(USERDATA* Head);
 void Category(USERDATA* Head);
 
 // 7) 전화번호부 처음 시작시 주소 재할당
+USERDATA* Create_Pointer();
 USERDATA* Reallocation();
 
 // 8) 전화번호부 종료시 동적할당 해지

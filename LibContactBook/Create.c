@@ -32,3 +32,11 @@ USERDATA* Create(USERDATA** Head) {
 
 	return ContactBook;
 }
+
+USERDATA* Create_Pointer() {
+	USERDATA* ContactBook = (USERDATA*)malloc(sizeof(USERDATA)+1);
+	memset(ContactBook, 0, sizeof(USERDATA) + 1);
+	ContactBook->pNext = NULL;
+
+	return ContactBook;
+}

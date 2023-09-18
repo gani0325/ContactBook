@@ -11,10 +11,10 @@ void main() {
 	char temp = "";
 
 	USERDATA* Head = malloc(sizeof(USERDATA)+1);
-	Head = NULL;
-
+	memset(Head, 0, sizeof(USERDATA) + 1);
 	USERDATA* NewNode = NULL;
-
+	Reallocation(&Head);
+  
 	while (temp != 'X') {
 		MainMenu(menu);
 		temp = *menu;
@@ -24,9 +24,6 @@ void main() {
 			NewNode = Create(&Head);
 			// 노드 추가
 			Add(&Head, NewNode);
-		}
-		else if (temp == 'L') {
-			Reallocation(Head);
 		}
 		else if (temp == 'P') {
 			PrintAll(Head);
