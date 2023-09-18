@@ -14,6 +14,7 @@ char* Find(USERDATA* Head, char* name)
 	{
 		printf("추가할 이름을 입력하세요:");
 		scanf("%s", &NameTemp);
+		getchar();
 		strcpy(name, NameTemp);
 
 		return name;
@@ -21,6 +22,7 @@ char* Find(USERDATA* Head, char* name)
 	else {
 		printf("추가할 이름을 입력하세요:");
 		scanf("%s", &NameTemp);
+		getchar();
 		strcpy(FindTemp, Current->szName);
 
 		while (1)

@@ -7,10 +7,5 @@
 //  ³ëµå ¼Ò¸ê 
 void Exit(USERDATA* Head)
 {
-    USERDATA* Current = Head;
-
-    while (Current->pNext != NULL) {
-        free(Current);
-    }
-    
+    free(Head);
 }

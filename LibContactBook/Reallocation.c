@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
 void Reallocation(USERDATA** Head)
 {
 	*Head = NULL;
@@ -15,7 +16,12 @@ void Reallocation(USERDATA** Head)
 	char* cmpName = "이름:";
 	char* cmpPhone = "전화번호:";
 	char* cmpCategory = "카테고리:";
-	pFile = fopen("Contactbook.txt", "r");
+	//if (feof(pFile) == 0) {
+	//	pFile = fopen("Contactbook.txt", "w");
+	//	fclose(pFile);
+	//}
+	pFile = fopen("Contactbook.txt", "a+");
+
 	// 파일 끝까지 읽기
 	while (feof(pFile) == 0) {
 		NewNode = Create_Pointer();

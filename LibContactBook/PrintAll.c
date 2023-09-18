@@ -11,11 +11,11 @@ USERDATA* PrintAll(USERDATA* Head)
 
 	while (Current != NULL)
 	{
-		printf("[%p] ", Current);
+		//printf("[%p] ", Current);
 		printf("이름: %s ", Current->szName);
 		printf("전화번호: %s ", Current->szPhone);
-		printf("카테고리: %d ", Current->category);
-		printf("이후 구조체 포인터 : %p\n", Current->pNext);
+		printf("카테고리: %d \n", Current->category);
+		//printf("이후 구조체 포인터 : %p\n", Current->pNext);
 
 		Current = Current->pNext;
 	}

@@ -14,6 +14,7 @@ void Update(USERDATA* Head) {
     char UpdatePhone[32];
     int UpdateCategory = 0;
     scanf("%s", UpdateName);
+    getchar();
 
     while (Current->pNext != NULL)
     {
@@ -22,6 +23,7 @@ void Update(USERDATA* Head) {
         if (*UpdateName == *UpdateNameTemp) {
             printf("수정하고 싶은 전화번호를 입력하세요 : ");
             scanf("%s", &UpdatePhone);
+            getchar();
             strcpy(Current->szPhone, UpdatePhone);
             printf("수정하고 싶은 카테고리를 입력하세요 친구[0], 가족[1], 직장[2], 기타[3] : ");
             scanf("%d", &UpdateCategory);

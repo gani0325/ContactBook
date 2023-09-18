@@ -11,6 +11,7 @@ void Category(USERDATA* Head) {
 
     int CategoryNum = 0;
     scanf("%d", &CategoryNum);
+    getchar();
     
     while (1)
     {
