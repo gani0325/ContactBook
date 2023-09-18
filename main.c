@@ -14,7 +14,7 @@ void main() {
 	memset(Head, 0, sizeof(USERDATA) + 1);
 	Head = NULL;
 	USERDATA* NewNode = NULL;
-	Reallocation(&Head);
+	//Reallocation(&Head);
   
 	while (temp != 'X') {
 		MainMenu(menu);
