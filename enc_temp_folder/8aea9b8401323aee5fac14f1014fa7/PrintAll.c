@@ -15,7 +15,7 @@ USERDATA* PrintAll(USERDATA* Head)
 		printf("이름: %s ", Current->szName);
 		printf("전화번호: %s ", Current->szPhone);
 		printf("카테고리: %d ", Current->category);
-		printf("이후 구조체 포인터 : %p\n", Current->pNext);
+		printf("이전 구조체 포인터 : %p\n", Current->pNext);
 
 		Current = Current->pNext;
 	}
