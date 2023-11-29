@@ -1,14 +1,15 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
 
-#include "pch.h"
 #include <stdio.h>
 #include <malloc.h>
+#include <string.h>
+#include "pch.h"
 
 
 void main() {
 	char* menu = malloc(sizeof(char)); // size 4 동적할당입니다!
 	memset(menu, 0, sizeof(char));
-	char temp = "";
+	char temp = ' ';
 
 	USERDATA* Head = malloc(sizeof(USERDATA)+1);
 	memset(Head, 0, sizeof(USERDATA) + 1);
@@ -45,7 +46,7 @@ void main() {
 			Exit(Head);
 		}
 		else {
-			temp = "";
+			temp = ' ';
 			continue;
 		}
 	}

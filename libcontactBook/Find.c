@@ -12,21 +12,21 @@ char* Find(USERDATA* Head, char* name)
 
 	if ((Head) == NULL)
 	{
-		printf("Ãß°¡ÇÒ ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä:");
-		scanf("%s", &NameTemp);
+		printf("ï¿½ß°ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½:");
+		scanf("%s", NameTemp);
 		strcpy(name, NameTemp);
 
 		return name;
 	}
 	else {
-		printf("Ãß°¡ÇÒ ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä:");
-		scanf("%s", &NameTemp);
+		printf("ï¿½ß°ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½:");
+		scanf("%s", NameTemp);
 		strcpy(FindTemp, Current->szName);
 
 		while (1)
 		{
 			if (*FindTemp == *NameTemp) {
-				printf("Áßº¹µÈ ÀÌ¸§ÀÔ´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä!\n");
+				printf("ï¿½ßºï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½Ô´Ï´ï¿½. ï¿½Ù½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½!\n");
 				Find(Current, name);
 			}
 			if (Current->pNext == NULL) {

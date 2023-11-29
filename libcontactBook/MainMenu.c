@@ -6,7 +6,7 @@
 void MainMenu(char* menu) {
 	MainMenuUI();
 
-	char menu_tmp = "";	
+	char menu_tmp = ' ';	
 	scanf("%c", &menu_tmp);
 	getchar();
 	*menu = menu_tmp;

@@ -5,7 +5,7 @@
 #include <string.h>
 
 void Update(USERDATA* Head) {
-    UpdateUI();
+    //UpdateUI();
 
     USERDATA* Current = Head;
 
@@ -17,13 +17,13 @@ void Update(USERDATA* Head) {
 
     while (Current->pNext != NULL)
     {
-        //±¸Á¶Ã¼ ÀÌ¸§°ú ¼öÁ¤ÇÒ ÀÌ¸§ÀÌ °°À¸¸é Ãâ·ÂÇÑ´Ù.
+        //ï¿½ï¿½ï¿½ï¿½Ã¼ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
         strcpy(UpdateNameTemp, Current->szName);
         if (*UpdateName == *UpdateNameTemp) {
-            printf("¼öÁ¤ÇÏ°í ½ÍÀº ÀüÈ­¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
-            scanf("%s", &UpdatePhone);
+            printf("ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È­ï¿½ï¿½È£ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ : ");
+            scanf("%s", UpdatePhone);
             strcpy(Current->szPhone, UpdatePhone);
-            printf("¼öÁ¤ÇÏ°í ½ÍÀº Ä«Å×°í¸®¸¦ ÀÔ·ÂÇÏ¼¼¿ä Ä£±¸[0], °¡Á·[1], Á÷Àå[2], ±âÅ¸[3] : ");
+            printf("ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ Ä£ï¿½ï¿½[0], ï¿½ï¿½ï¿½ï¿½[1], ï¿½ï¿½ï¿½ï¿½[2], ï¿½ï¿½Å¸[3] : ");
             scanf("%d", &UpdateCategory);
             getchar();
             Current->category = UpdateCategory;

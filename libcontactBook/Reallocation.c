@@ -13,70 +13,69 @@ void Reallocation(USERDATA** Head)
 	char Name[100];
 	char* pszSep = " ";
 	char* pszToken = NULL;
-	char* cmpName = "ÀÌ¸§:";
-	char* cmpPhone = "ÀüÈ­¹øÈ£:";
-	char* cmpCategory = "Ä«Å×°í¸®:";
+	char* cmpName = "ï¿½Ì¸ï¿½:";
+	char* cmpPhone = "ï¿½ï¿½È­ï¿½ï¿½È£:";
+	char* cmpCategory = "Ä«ï¿½×°ï¿½ï¿½ï¿½:";
 	if (pFile == NULL) {
 		pFile = fopen("Contactbook.txt", "a");
 		fclose(pFile);
 	}
 	pFile = fopen("Contactbook.txt", "r");
 
-	// ÆÄÀÏ ³¡±îÁö ÀÐ±â
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ð±ï¿½
 	while (feof(pFile) == 0) {
 		NewNode = Create_Pointer();
-		//ÇÑÁÙ¾¿ ÀÐ±â
+		//ï¿½ï¿½ï¿½Ù¾ï¿½ ï¿½Ð±ï¿½
 		pszToken = "";
-		if (fgets(Name, 100, pFile) != EOF) {
-			// " "À¸·Î ÅäÅ«È­
+		if (fgets(Name, 100, pFile) != NULL) {
+			// " "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å«È­
 			pszToken = strtok(Name, pszSep);
-			// ÅäÅ«ÀÌ NULLÀÌ ¾øÀ»¶§!
+			// ï¿½ï¿½Å«ï¿½ï¿½ NULLï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½!
 			while (pszToken != NULL) {
 				if (strcmp(Name, "\n") == 0) {
 					pszToken = strtok(NULL, pszSep);
 					continue;
 				}
-				//ÀÌ¸§:À» ¸¸³ª¸é ´ÙÀ½ ÅäÅ«ÀÎ ÀÌ¸§À» ÀúÀåÇÑ´Ù.
+				//ï¿½Ì¸ï¿½:ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å«ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 				else if (strcmp(pszToken, cmpName) == 0) {
 					pszToken = strtok(NULL, pszSep);
 					strcpy(NewNode->szName, pszToken);
 
 					continue;
 				}
-				//ÀüÈ­¹øÈ£:À» ¸¸³ª¸é ´ÙÀ½ ÅäÅ«ÀÎ ÀüÈ­¹øÈ£¸¦ ÀúÀåÇÑ´Ù.
+				//ï¿½ï¿½È­ï¿½ï¿½È£:ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å«ï¿½ï¿½ ï¿½ï¿½È­ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 				else if (strcmp(pszToken, cmpPhone) == 0) {
 					pszToken = strtok(NULL, pszSep);
 					strcpy(NewNode->szPhone, pszToken);
 					continue;
 				}
-				//Ä«Å×°í¸®:À» ¸¸³ª¸é ´ÙÀ½ ÅäÅ«ÀÎ Ä«Å×°í¸®¸¦ ÀúÀåÇÑ´Ù.
+				//Ä«ï¿½×°ï¿½ï¿½ï¿½:ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å«ï¿½ï¿½ Ä«ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 				else if (strcmp(pszToken, cmpCategory) == 0) {
 					pszToken = strtok(NULL, pszSep);
 					NewNode->category = atoi(pszToken);
 
 					continue;
 				}
-				//\nµîÀÇ ÅäÅ«À» »«´Ù.
+				//\nï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å«ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 				pszToken = strtok(NULL, pszSep);
 			}
 		}
-		if (NewNode->category != NULL) {
+		if (NewNode->category != 0) {
 			if ((*Head) == NULL)
 			{
-
 				*Head = NewNode;
 			}
 			else
 			{
-				//  Å×ÀÏÀ» Ã£¾Æ NewNode¸¦ ¿¬°áÇÑ´Ù. 
+				//  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½ NewNodeï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½. 
 				USERDATA* Tail = (*Head);
 				while (Tail->pNext != NULL)
 				{
 					Tail = Tail->pNext;
 				}
-				// ÀÌÀü ÁÖ¼Ò
+				// ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½
 				Temp = Tail;
-				// ÇöÀç ÁÖ¼Ò
+				// ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½
 				Tail->pNext = NewNode;
 			}
 		}
