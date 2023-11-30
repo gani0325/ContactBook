@@ -1,38 +1,25 @@
-Add.o : Add.c pch.h
-	gcc -fPIC -c -o Add.o Add.c
+IDIR = ../include
+CC=gcc
+CFLAGS=-I$(IDIR)
 
-Category.o : Category.c pch.h
-	gcc -fPIC -c -o Category.o Category.c
+ODIR=obj
+LDIR=../lib
 
-Create.o : Create.c pch.h
-	gcc -fPIC -c Create.c
+LIBS=-lm
 
-Exit.o : Exit.c pch.h
-	gcc -fPIC -c Exit.c
+_DEPS = hellomake.h
+DEPS = $(patsubst %, $(IDIR)/%,$(_DEPS))
 
-Find.o : Find.c pch.h
-	gcc -fPIC -c Find.c
+_OBJ = hellomake.o hellofunc.o
+OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
-MainMenu.o : MainMenu.c pch.h
-	gcc -fPIC -c MainMenu.c
+$(ODIR)/%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
 
-PrintAll.o : PrintAll.c pch.h
-	gcc -fPIC -c PrintAll.c 
+hellomake: $(OBJ)
+	gcc -o $@ $^ $(CFLAGS) $(LIBS)
 
-Reallocation.o : Reallocation.c pch.h
-	gcc -fPIC -c Reallocation.c
-
-Remove.o : Remove.c pch.h
-	gcc -fPIC -c Remove.c
-
-Search.o : Search.c pch.h
-	gcc -fPIC -c Search.c
-
-UI.o : UI.c pch.h
-	gcc -fPIC -c UI.c
-
-Update.o : Update.c pch.h
-	gcc -fPIC -c Update.c
+.PHONY : clean
 
 clean: 
-	rm -rf *.o
+	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~
