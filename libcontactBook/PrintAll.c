@@ -12,10 +12,10 @@ USERDATA* PrintAll(USERDATA* Head)
 	while (Current != NULL)
 	{
 		printf("[%p] ", Current);
-		printf("이름: %s ", Current->szName);
-		printf("전화번호: %s ", Current->szPhone);
-		printf("카테고리: %d ", Current->category);
-		printf("이전 구조체 포인터 : %p\n", Current->pNext);
+		printf("name: %s ", Current->szName);
+		printf("number: %s ", Current->szPhone);
+		printf("category: %d ", Current->category);
+		printf("previous struct pointer : %p\n", Current->pNext);
 
 		Current = Current->pNext;
 	}

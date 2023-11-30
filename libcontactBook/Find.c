@@ -12,21 +12,21 @@ char* Find(USERDATA* Head, char* name)
 
 	if ((Head) == NULL)
 	{
-		printf("�߰��� �̸��� �Է��ϼ���:");
+		printf("Add name:");
 		scanf("%s", NameTemp);
 		strcpy(name, NameTemp);
 
 		return name;
 	}
 	else {
-		printf("�߰��� �̸��� �Է��ϼ���:");
+		printf("Add name:");
 		scanf("%s", NameTemp);
 		strcpy(FindTemp, Current->szName);
 
 		while (1)
 		{
 			if (*FindTemp == *NameTemp) {
-				printf("�ߺ��� �̸��Դϴ�. �ٽ� �Է����ּ���!\n");
+				printf("Duplicated name. Enter again.\n");
 				Find(Current, name);
 			}
 			if (Current->pNext == NULL) {

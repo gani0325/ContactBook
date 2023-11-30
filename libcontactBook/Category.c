@@ -14,11 +14,11 @@ void Category(USERDATA* Head) {
     
     while (1)
     {
-        //±¸Á¶Ã¼ ÀÌ¸§°ú °Ë»öÇÒ ÀÌ¸§ÀÌ °°À¸¸é Ãâ·ÂÇÑ´Ù.
+        //ï¿½ï¿½ï¿½ï¿½Ã¼ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
         if (Current->category == CategoryNum) {
-            printf("ÀÌ¸§: %s ", Current->szName);
-            printf("ÀüÈ­¹øÈ£: %s ", Current->szPhone);
-            printf("Ä«Å×°í¸®: %d ", Current->category);
+            printf("name: %s ", Current->szName);
+            printf("number: %s ", Current->szPhone);
+            printf("category: %d ", Current->category);
             printf("\n");
         }
         if (Current->pNext == NULL) {

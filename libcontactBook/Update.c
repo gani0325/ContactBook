@@ -17,13 +17,13 @@ void Update(USERDATA* Head) {
 
     while (Current->pNext != NULL)
     {
-        //����ü �̸��� ������ �̸��� ������ ����Ѵ�.
+        //구조체 이름과 수정할 이름이 같으면 출력한다.
         strcpy(UpdateNameTemp, Current->szName);
         if (*UpdateName == *UpdateNameTemp) {
-            printf("�����ϰ� ���� ��ȭ��ȣ�� �Է��ϼ��� : ");
+            printf("update contactbook number : ");
             scanf("%s", UpdatePhone);
             strcpy(Current->szPhone, UpdatePhone);
-            printf("�����ϰ� ���� ī�װ����� �Է��ϼ��� ģ��[0], ����[1], ����[2], ��Ÿ[3] : ");
+            printf("update category friend[0], family[1], company[2], other[3] : ");
             scanf("%d", &UpdateCategory);
             getchar();
             Current->category = UpdateCategory;

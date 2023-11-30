@@ -13,9 +13,9 @@ void Reallocation(USERDATA** Head)
 	char Name[100];
 	char* pszSep = " ";
 	char* pszToken = NULL;
-	char* cmpName = "�̸�:";
-	char* cmpPhone = "��ȭ��ȣ:";
-	char* cmpCategory = "ī�װ���:";
+	char* cmpName = "name:";
+	char* cmpPhone = "number:";
+	char* cmpCategory = "category:";
 	if (pFile == NULL) {
 		pFile = fopen("Contactbook.txt", "a");
 		fclose(pFile);
